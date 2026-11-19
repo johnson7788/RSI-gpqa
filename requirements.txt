@@ -1,0 +1,27 @@
+# SIA-GPQA 复现项目 - Python 依赖
+# 建议 Python >= 3.11
+
+# 核心
+# torch>=2.5.0          # CUDA 版需自行安装
+# transformers>=4.51.0  # Qwen3 架构支持
+peft>=0.13.0
+trl>=0.16.0
+datasets>=3.1.0
+accelerate>=1.1.0
+bitsandbytes>=0.44.0
+
+# 推理服务
+fastapi>=0.110
+uvicorn>=0.29
+
+# 数据
+numpy>=2.0
+pandas>=2.0
+scikit-learn>=1.4
+sentencepiece
+protobuf
+
+# 可选：SIA 本体
+# pydantic-ai>=1.0       # meta agent impl
+# openhands-ai>=1.6.0    # 备用 agent impl
+# anthropic>=0.40        # target agent 参考实现

@@ -1,0 +1,21 @@
+# --- 凭据与密钥（绝不提交）---
+YOUR_RELAY_API_KEY
+YOUR_SERVER_PASSWORD
+*.env
+.env.*
+!.env.example
+
+# --- 运行产物 ---
+runs/
+out/
+data/selfdist/*.json
+data/out/*.json
+*.tar.gz
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- 系统 ---
+.DS_Store
+Thumbs.db
