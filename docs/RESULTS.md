@@ -1,5 +1,8 @@
 # SIA 复现结果
 
+> 📖 返回 [文档索引](README.md) · [主 README](../README.md)
+
+
 实验配置（`runs/run_3`）：
 
 | 项 | 值 |

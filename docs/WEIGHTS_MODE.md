@@ -1,5 +1,8 @@
 # 路线 B 复现记录：LoRA 权重更新
 
+> 📖 返回 [文档索引](README.md) · [主 README](../README.md)
+
+
 与 harness 模式（只改代码/prompt）不同，这里是**真正修改模型参数**。
 
 ## 服务器
@@ -9,7 +12,7 @@
 | 机器 | uhost-1w9delcv23hk（`YOUR_SERVER_IP:23`） |
 | GPU | NVIDIA A800-SXM4-80GB（驱动 595.71.05 / CUDA 13.2） |
 | 系统 | Ubuntu 22.04 / Python 3.10 / 236 GB 内存 / 164 GB 空闲磁盘 |
-| 环境 | `/workspace/lora_gpqa/venv`：torch 2.5.1+cu124、transformers 4.48.3、peft 0.13.2、trl 0.16.1 |
+| 环境 | `<训练服务器路径>`：torch 2.5.1+cu124、transformers 4.48.3、peft 0.13.2、trl 0.16.1 |
 | 底座模型 | `/model/ModelScope/Qwen/Qwen2.5-3B-Instruct`（另有 7B、Qwen3-4B/8B、Llama-3.1-8B 等） |
 
 > 模型实际在 `/model`（不是 `/models`）。服务器原本无 pip，用 ensurepip 自举后用清华镜像装依赖。
@@ -72,7 +75,7 @@ GRPO 的组内奖励几乎恒为 0，`reward_std ≈ 0`，没有任何梯度信�
 ## 远端文件
 
 ```
-/workspace/lora_gpqa/
+<训练服务器路径>
 ├── train_rest.py          # 拒绝采样 + SFT + 评测 主流程
 ├── train_law.py           # lawbench GRPO（备选）
 ├── train_rl.py            # GPQA GRPO（对照，证明不可学）

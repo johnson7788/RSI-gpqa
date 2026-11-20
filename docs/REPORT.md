@@ -1,5 +1,8 @@
 # SIA 论文复现 — 完整报告
 
+> 📖 返回 [文档索引](README.md) · [主 README](../README.md)
+
+
 > 复现目标：[SIA: Self Improving AI with Harness & Weight Updates](https://arxiv.org/abs/2605.27276)
 > （Hebbar et al., 2026）
 >
@@ -382,7 +385,7 @@ SFT 改变的是"怎么推理"，不是"知道什么"。
 | `lora_results/` | 全部结果 JSON 与脚本备份 |
 | `lora_results/harness_run22/` | Qwen3-8B harness 三代结果 |
 
-### 服务器（`/workspace/lora_gpqa/`）
+### 服务器（训练环境）
 
 | 路径 | 内容 |
 |---|---|

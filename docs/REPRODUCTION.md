@@ -1,5 +1,8 @@
 # SIA 论文复现记录（本地）
 
+> 📖 返回 [文档索引](README.md) · [主 README](../README.md)
+
+
 复现目标：[SIA: Self Improving AI with Harness & Weight Updates](https://arxiv.org/abs/2605.27276) 的 **Harness 模式**自我改进循环。
 
 ## 1. 本机环境（如何搭起来的）

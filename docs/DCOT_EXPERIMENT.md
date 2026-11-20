@@ -1,5 +1,8 @@
 # D-CoT 式权重重训记录（Qwen3-8B + ORPO）
 
+> 📖 返回 [文档索引](README.md) · [主 README](../README.md)
+
+
 这是路线 B 的第二阶段：在 lawbench 拒绝采样 SFT（+7.9pt，见 `WEIGHTS_MODE.md`）之后，
 尝试复现 D-CoT（arXiv 2602.21786）——用**控制标签 strucutred CoT + ORPO** 抑制小模型的
 overthinking。
@@ -69,7 +72,7 @@ overthinking。
 ## 文件
 
 ```
-/workspace/lora_gpqa/
+<训练服务器路径>
 ├── gen_dcot_v3.py        数据生成（STEM + 难度感知）
 ├── train_orpo.py         ORPO 训练
 ├── eval_final.py         双配置评测

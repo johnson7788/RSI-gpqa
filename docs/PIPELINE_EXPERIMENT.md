@@ -1,5 +1,8 @@
 # SIA 串联实验：Harness + 权重更新（Qwen3-8B / GPQA）
 
+> 📖 返回 [文档索引](README.md) · [主 README](../README.md)
+
+
 > 目标：把 harness（改代码/prompt）与权重更新串成完整循环，检验"串联"能否超过单独效果。
 > 底座统一为 **Qwen3-8B**（本地部署），评测集为 GPQA **40 题严格 held-out**。
 
@@ -265,7 +268,7 @@ base 在 40 题中错 14 题。这些题的共同特征是**需要模型原本�
 - `lora_results/harness_run22/` — 本次 harness 结果备份
 - `lora_results/final_harness_eval.json` — 串联评测结果
 
-服务器 `/workspace/`：
+服务器（训练环境）：
 - `sia/runs/run_22/gen_1/` — Gen 1 完整轨迹（198 条）
 - `lora_gpqa/out/final_harness/final_adapter` — 串联训练出的 LoRA 权重
 - `lora_gpqa/batch_server2.py` — 本地推理服务

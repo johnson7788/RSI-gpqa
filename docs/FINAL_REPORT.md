@@ -1,5 +1,8 @@
 # SIA 复现最终报告：Harness + 权重更新串联
 
+> 📖 返回 [文档索引](README.md) · [主 README](../README.md)
+
+
 > 复现目标：[SIA: Self Improving AI with Harness & Weight Updates](https://arxiv.org/abs/2605.27276)
 > （Hebbar et al., 2026, arXiv 2605.27276）
 >
@@ -404,40 +407,39 @@ prompt 能改变它"怎么组织答案"，**不能改变它"知道什么"**。
 
 ## 九、文件索引
 
-### 9.1 本地文件（绝对路径）
+### 9.1 本仓库文档
 
 | 路径 | 内容 |
 |---|---|
-| `/Users/admin/Documents/RSI/sia/FINAL_REPORT.md` | **本报告** |
-| `/Users/admin/Documents/RSI/sia/REPORT.md` | 主报告（harness + weights 全景） |
-| `/Users/admin/Documents/RSI/sia/PIPELINE_EXPERIMENT.md` | 串联实验详细记录 |
-| `/Users/admin/Documents/RSI/sia/WEIGHTS_REPORT.md` | 12 个权重配置详情 |
-| `/Users/admin/Documents/RSI/sia/WEIGHTS_MODE.md` | lawbench +7.9pt 成功案例 |
-| `/Users/admin/Documents/RSI/sia/DCOT_EXPERIMENT.md` | D-CoT 实验记录 |
-| `/Users/admin/Documents/RSI/sia/RESULTS.md` | Harness 模式详细结果 |
-| `/Users/admin/Documents/RSI/sia/REPRODUCTION.md` | 环境搭建与中转站接入 |
-| `/Users/admin/Documents/RSI/upload/model/README.md` | ModelScope 模型卡片（已上传） |
-| `/Users/admin/Documents/RSI/upload/dataset/README.md` | ModelScope 数据集卡片（已上传） |
-| `/Users/admin/Documents/RSI/lora_results/` | 全部结果 JSON 与脚本备份 |
-| `/Users/admin/Documents/RSI/lora_results/harness_run22/` | Qwen3-8B harness 三代结果 |
+| `docs/FINAL_REPORT.md` | **本报告** |
+| `docs/REPORT.md` | 全景报告（harness + weights + 串联） |
+| `docs/PIPELINE_EXPERIMENT.md` | 串联实验详细记录 |
+| `docs/WEIGHTS_REPORT.md` | 权重模式 12 个配置详析 |
+| `docs/WEIGHTS_MODE.md` | lawbench 成功案例 |
+| `docs/DCOT_EXPERIMENT.md` | D-CoT 控制标签实验 |
+| `docs/RESULTS.md` | Harness 逐代结果 |
+| `docs/REPRODUCTION.md` | 环境搭建与踩坑记录 |
+| `docs/MODEL_CARD.md` | 模型卡片（ModelScope 同步） |
+| `docs/DATASET_CARD.md` | 数据集卡片（ModelScope 同步） |
 
-### 9.2 ModelScope 仓库
+### 9.2 脚本与代码
+
+| 路径 | 内容 |
+|---|---|
+| `scripts/extract_harness_traj.py` | 轨迹提取（自动排除 held-out） |
+| `scripts/build_final.py` | 合并轨迹 → 训练集 |
+| `scripts/train_selfdist.py` | LoRA 自蒸馏训练 |
+| `scripts/eval_final.py` / `scripts/eval_single.py` | 评测 |
+| `scripts/gen_teacher_solutions.py` / `scripts/teacher_retry.py` | 教师解法生成 |
+| `inference/batch_server2.py` | 本地 Qwen3-8B 推理服务 |
+
+### 9.3 外部发布物
 
 | 仓库 | 内容 |
 |---|---|
-| [modelzhang/sia-qwen3-8b-gpqa-lora](https://www.modelscope.cn/models/modelzhang/sia-qwen3-8b-gpqa-lora) | LoRA adapter（174MB）+ 报告 |
-| [modelzhang/sia-gpqa-harness-trajectories](https://www.modelscope.cn/datasets/modelzhang/sia-gpqa-harness-trajectories) | 轨迹数据 + 代码 + 评测结果 |
-
-### 9.3 服务器关键路径
-
-| 路径 | 内容 |
-|---|---|
-| `/workspace/sia/runs/run_22/gen_1/agent_execution/` | Gen 1 完整轨迹（198 条） |
-| `/workspace/lora_gpqa/out/final_harness/final_adapter/` | 串联训练出的 LoRA 权重 |
-| `/workspace/lora_gpqa/selfdist/final_train.json` | 109 条训练集 |
-| `/workspace/lora_gpqa/batch_server2.py` | 本地推理服务 |
-
----
+| [ModelScope 模型](https://www.modelscope.cn/models/modelzhang/sia-qwen3-8b-gpqa-lora) | LoRA adapter（174MB） |
+| [ModelScope 数据集](https://www.modelscope.cn/datasets/modelzhang/sia-gpqa-harness-trajectories) | 轨迹数据 + 代码 + 评测结果 |
+| [GitHub](https://github.com/johnson7788/RSI-gpqa) | 本仓库 |
 
 ## 十、后续建议
 

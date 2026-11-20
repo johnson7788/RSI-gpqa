@@ -1,5 +1,8 @@
 # SIA 论文复现 — 权重更新（Route B）最终报告
 
+> 📖 返回 [文档索引](README.md) · [主 README](../README.md)
+
+
 > 在 Harness 模式之后，尝试真正**更新模型权重**。底座 Qwen3-8B，硬件 NVIDIA A800-80GB，
 > 任务 GPQA（198 题，40 题严格 held-out，158 题用于训练/自蒸馏）。
 > 共执行 **12 个配置**，全部使用统一的评测协议（同一解析器、同一批 40 题）。
@@ -109,7 +112,7 @@ Qwen3-8B 用 `max_new_tokens=1536` 测得 20%，提到 8192 后真实水平是 *
 - `sia/DCOT_EXPERIMENT.md` — D-CoT 实验记录
 - `lora_results/` — 全部结果 JSON 与脚本
 
-服务器 `/workspace/lora_gpqa/`：
+服务器（训练环境）：
 - `collect_trajectories.py` — 轨迹采集
 - `train_selfdist.py` — 自蒸馏/混合 SFT
 - `train_orpo.py` — ORPO 训练
